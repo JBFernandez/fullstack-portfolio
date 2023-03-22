@@ -1,0 +1,25 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "server": "nodemon server.js",
+    "client": "npm start --prefix react-portfolio",
+    "dev": "concurrently \"npm run server\" \"npm run react-portfolio\"",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix react-portfolio && npm run build --prefix react-portfolio"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "concurrently": "^7.6.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "nodemailer": "^6.9.1",
+    "nodemon": "^2.0.21"
+  }
+}
+
+
