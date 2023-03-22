@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "server": "nodemon server.js",
+    "server": "nodemon index.js",
     "client": "npm start --prefix react-portfolio",
     "dev": "concurrently \"npm run server\" \"npm run react-portfolio\"",
     "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix react-portfolio && npm run build --prefix react-portfolio"
