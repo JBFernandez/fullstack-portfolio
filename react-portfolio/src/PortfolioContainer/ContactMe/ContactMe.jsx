@@ -19,7 +19,7 @@ export const ContactMe = ( props ) => {
 
     // puede que tenga tema con el localhost
     const api = axios.create({
-        baseURL: "http://localhost:5000"
+        baseURL: "https://fullstack-portfolio-lemon.vercel.app"
     })
 
     let fadeInScreenHandler = ( screen ) => {
