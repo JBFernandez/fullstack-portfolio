@@ -23,7 +23,7 @@ router.post('/contact', async(req, res) => {
     }
 
     let transporter = nodemailer.createTransport({
-        service: "hotmail",
+        service: "gmail",
         auth: {
           user: process.env.EMAIL_USERNAME, // generated ethereal user
           pass: process.env.EMAIL_PASSWORD, // generated ethereal password
