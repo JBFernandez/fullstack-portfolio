@@ -14,8 +14,8 @@ export const Profile = () => {
                 <div className='colz' >
                     <div className='colz-icon' >
 {/* modificar iconos de face, insta etc */}
-                        <a href="https://www.facebook.com/coco.fernandez.330">
-                            <i className='fa fa-facebook-square' ></i>
+                        <a href="https://github.com/JBFernandez">
+                            <i className='fa fa-github-square' ></i>
                         </a>
                         
                         <a href="">

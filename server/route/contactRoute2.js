@@ -1,9 +1,12 @@
 const router = require('express').Router();
 const nodemailer = require('nodemailer');
 require('dotenv').config();
+const sendgridTransport = require('nodemailer-sendgrid-transport');
+
+ 
 
 
-router.post('/contact', async(req, res) => {
+router.post('/contact', (req, res) => {
 
 
     let data = req.body
@@ -17,20 +20,25 @@ router.post('/contact', async(req, res) => {
 
     if ( name.length === 0 || email.length === 0 || message.length === 0 ) {
         return res.json({
-            msg: "Please fill al the fields"
-            
+            msg: "Please fill al the fields"            
         })
     }
 
-    let transporter = nodemailer.createTransport({
-        service: "gmail",
+    let transporter = nodemailer.createTransport(sendgridTransport({
         auth: {
-          user: process.env.EMAIL_USERNAME, // generated ethereal user
-          pass: process.env.EMAIL_PASSWORD, // generated ethereal password
+            api_key: process.env.API_KEY
         },
-      });
+    }))
+        
+    //     {
+    //     service: "gmail",
+    //     auth: {
+    //       user: process.env.EMAIL_USERNAME, // generated ethereal user
+    //       pass: process.env.EMAIL_PASSWORD, // generated ethereal password
+    //     },
+    //   });
 
-        await transporter.sendMail({
+        transporter.sendMail({
             from: process.env.EMAIL_USERNAME, // sender address
             to: "bernardo.fersan@gmail.com", // list of receivers
             subject: `message from ${name}`, // Subject line
