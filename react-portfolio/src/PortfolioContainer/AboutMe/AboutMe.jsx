@@ -78,7 +78,7 @@ export const AboutMe = ( props ) => {
                         {""}
                         Hire Me{" "}
                     </button>
-                    <a href="JoseBernardoCV.pdf" download="joseCV.pdf" >
+                    <a href="JoseBernardoCV.pdf" download="CV - Jose Fernandez.pdf" >
                         <button className='btn highlighted-btn' > Get Resume </button>
                     </a>
             </div>
